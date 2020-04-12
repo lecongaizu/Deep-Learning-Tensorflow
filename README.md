@@ -5,6 +5,6 @@ This source is implemented some neural networks using Tensorflow framework
 
 2_AE: Autoencoder.
 
-3_VAE: Variational Autoencoders (VAEs).
+3_VAE: Variational Autoencoders.
 
-4_GAN: Generative adversarial network (VAEs).
+4_GAN: Generative adversarial network.
