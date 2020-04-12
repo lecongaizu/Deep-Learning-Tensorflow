@@ -133,6 +133,7 @@ init = tf.global_variables_initializer()
 # tf Graph input (only pictures)
 X = tf.placeholder("float", [None, image_dim])
 
+vae_loss = []
 # Start training
 with tf.Session() as sess:
 
@@ -147,8 +148,15 @@ with tf.Session() as sess:
         # Train
         feed_dict = {input_image: batch_x}
         _, l = sess.run([train_op, loss_op], feed_dict=feed_dict)
+        vae_loss.append(l)
         if i % 1000 == 0 or i == 1:
             print('Step %i, Loss: %f' % (i, l))
+
+    epochs = range(1, num_steps+1)
+    plt.plot(epochs, vae_loss, 'g', label='VAE Loss')
+    plt.xlabel('Epochs')
+    plt.ylabel('Loss')
+    plt.savefig('vae_loss.png')
 
     # Testing
     # Encode and decode images from test set and visualize their reconstruction.
@@ -175,7 +183,7 @@ with tf.Session() as sess:
     print("Original Images")
     plt.figure(figsize=(n, n))
     plt.imshow(canvas_orig, origin="upper", cmap="gray")
-    plt.savefig("Original_VAE.png")
+    plt.savefig("Original_image.png")
 
     print("Reconstructed Images")
     plt.figure(figsize=(n, n))

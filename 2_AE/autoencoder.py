@@ -17,7 +17,7 @@ mnist = input_data.read_data_sets("/tmp/data/", one_hot=True)
 
 # Training Parameters
 learning_rate = 0.001
-num_steps = 3000
+num_steps = 30000
 batch_size = 128
 
 display_step = 1000
@@ -94,6 +94,7 @@ optimizer = tf.train.RMSPropOptimizer(learning_rate).minimize(loss)
 # Initialize the variables (i.e. assign their default value)
 init = tf.global_variables_initializer()
 
+ae_loss = []
 # Start Training
 # Start a new TF session
 with tf.Session() as sess:
@@ -109,9 +110,17 @@ with tf.Session() as sess:
 
         # Run optimization op (backprop) and cost op (to get loss value)
         _, l = sess.run([optimizer, loss], feed_dict={X: batch_x})
+        ae_loss.append(l)
         # Display logs per step
         if i % display_step == 0 or i == 1:
             print('Step %i: Minibatch Loss: %f' % (i, l))
+
+    # Plot loss function
+    # epochs = range(1, num_steps+1)
+    # plt.plot(epochs, ae_loss, 'g', label='AE Loss')
+    # plt.xlabel('Epochs')
+    # plt.ylabel('Loss')
+    # plt.savefig('ae_loss.png')
 
     # Testing
     # Encode and decode images from test set and visualize their reconstruction.
@@ -138,9 +147,9 @@ with tf.Session() as sess:
     print("Original Images")
     plt.figure(figsize=(n, n))
     plt.imshow(canvas_orig, origin="upper", cmap="gray")
-    plt.savefig("Original.png")
+    plt.savefig("Original_Image.png")
 
     print("Reconstructed Images")
     plt.figure(figsize=(n, n))
     plt.imshow(canvas_recon, origin="upper", cmap="gray")
-    plt.savefig("Reconstructed.png")
+    plt.savefig("Recon_Image.png")
