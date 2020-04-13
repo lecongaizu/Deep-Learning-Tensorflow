@@ -10,3 +10,5 @@ I used to MNIST dataset for testing all code
 3_VAE: Variational Autoencoders.
 
 4_GAN: Generative adversarial network.
+
+5_DCGAN: Deep Convolutional Generative Adversarial Network.
