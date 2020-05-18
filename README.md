@@ -1,7 +1,6 @@
 # Tensorflow-Neural-Networks
-This source is implemented some neural networks using Tensorflow framework.
-
-I used to MNIST dataset for testing all code
+This source code is used as Tensorflow Tutorial for a beginer.
+This is structure of this tutorial. 
 
 1_Neuralnetworks: Neural Network, Convolutional Neural Network . 
 
