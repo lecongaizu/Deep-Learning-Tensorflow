@@ -13,6 +13,7 @@ The Table of content:
 - 5_DCGAN: Deep Convolutional Generative Adversarial Network.
 
 Getting Started:
+
 $ git clone https://github.com/lecongaizu/Tensforlow-Tutorials.git
 $ cd Tensforlow-Tutorials/PATH_TO_PROJECT
 $ python main.py
