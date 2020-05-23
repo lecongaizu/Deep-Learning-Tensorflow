@@ -2,17 +2,17 @@ This repository provides tutorial code for deep learning researchers to learn Te
 
 The Table of content:
 
-1_Neuralnetworks: Neural Network, Convolutional Neural Network . 
+- 1_Neuralnetworks: Neural Network, Convolutional Neural Network . 
 
-2_AE: Autoencoder.
+- 2_AE: Autoencoder.
 
-3_VAE: Variational Autoencoders.
+- 3_VAE: Variational Autoencoders.
 
-4_GAN: Generative adversarial network.
+- 4_GAN: Generative adversarial network.
 
-5_DCGAN: Deep Convolutional Generative Adversarial Network.
+- 5_DCGAN: Deep Convolutional Generative Adversarial Network.
 
-Getting Started
+Getting Started:
 $ git clone https://github.com/lecongaizu/Tensforlow-Tutorials.git
 $ cd Tensforlow-Tutorials/PATH_TO_PROJECT
 $ python main.py
