@@ -15,7 +15,9 @@ The Table of content:
 Getting Started:
 
 $ git clone https://github.com/lecongaizu/Tensforlow-Tutorials.git
+
 $ cd Tensforlow-Tutorials/PATH_TO_PROJECT
+
 $ python main.py
 
 Dependencies
